@@ -14,13 +14,11 @@ DevCrate features a clean, responsive, and modern UI with full light and dark mo
 
 | Dark Mode Dashboard | Light Mode Dashboard |
 | :---: | :---: |
-| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/dark_dashboard.jpg" alt="Dark Mode Dashboard" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/light_dashboard.jpg" alt="Light Mode Dashboard" width="400"/> |
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/dark_dashboard.png" alt="Dark Mode Dashboard" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/light_dashboard.png" alt="Light Mode Dashboard" width="400"/> |
 | **Add Crate Modal** | **AI Summary Modal** |
-| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/add_crate_modal.jpg" alt="Add Crate Modal" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/summary_modal.jpg" alt="AI Summary Modal" width="400"/> |
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/add_crate_modal.png" alt="Add Crate Modal" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/summary_modal.png" alt="AI Summary Modal" width="400"/> |
 | **Landing Page** | **Auth Page (Dark)** |
-| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/landing_page.jpg" alt="Landing Page" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/auth_page.jpg" alt="Auth Page" width="400"/> |
-
-*(Note: Add a `screenshots` folder to your repo, add your images, and update the links above if needed.)*
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/landing_page.png" alt="Landing Page" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/auth_page.png" alt="Auth Page" width="400"/> |
 
 ---
 
