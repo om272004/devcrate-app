@@ -41,7 +41,7 @@ export default function AuthButton() {
         <button onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-700"
             aria-label="Toggle Dark & Light Theme">
-            {theme === 'light' ? <Moon size={25} /> : <Sun size={25} />}
+            {theme === 'dark' ? <Moon size={25} /> : <Sun size={25} />}
         </button>
         <Link href="/signin">
             <button className="hover:text-blue-500 hover:underline text-sm">Sign In</button>
