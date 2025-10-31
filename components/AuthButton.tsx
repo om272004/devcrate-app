@@ -38,11 +38,9 @@ export default function AuthButton() {
 
 
     return <div className="flex gap-x-2 lg:gap-x-4 font-bold items-center lg:text-lg">
-        <button onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-700"
-            aria-label="Toggle Dark & Light Theme">
-            {theme === 'dark' ? <Moon size={25} /> : <Sun size={25} />}
-        </button>
+        <button onClick={toggleTheme} aria-label="Toggle Dark and Light theme">
+                {theme === 'dark' ? <Moon size={25} /> : <Sun size={25} />}
+            </button>
         <Link href="/signin">
             <button className="hover:text-blue-500 hover:underline text-sm">Sign In</button>
         </Link>

@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 DevCrate: Your AI-Powered Knowledge Base
 
-## Getting Started
+DevCrate is an AI-powered bookmarking tool for developers. It automatically summarizes, tags, and organizes your saved URLs using Google Gemini — turning random links into a smart, searchable knowledge base.
 
-First, run the development server:
+> 🧠 **Built to help developers never lose valuable resources again.** Unlike traditional bookmark managers, DevCrate adds AI-generated context to every single link you save.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Live Demo:** [**https://devcrate-app.vercel.app**]
+
+---
+
+## 📸 Project Showcase
+
+DevCrate features a clean, responsive, and modern UI with full light and dark mode support.
+
+| Dark Mode Dashboard | Light Mode Dashboard |
+| :---: | :---: |
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/dark_dashboard.jpg" alt="Dark Mode Dashboard" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/light_dashboard.jpg" alt="Light Mode Dashboard" width="400"/> |
+| **Add Crate Modal** | **AI Summary Modal** |
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/add_crate_modal.jpg" alt="Add Crate Modal" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/summary_modal.jpg" alt="AI Summary Modal" width="400"/> |
+| **Landing Page** | **Auth Page (Dark)** |
+| <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/landing_page.jpg" alt="Landing Page" width="400"/> | <img src="https://raw.githubusercontent.com/om272004/devcrate-app/main/screenshots/auth_page.jpg" alt="Auth Page" width="400"/> |
+
+*(Note: Add a `screenshots` folder to your repo, add your images, and update the links above if needed.)*
+
+---
+
+## ✨ Key Features
+
+* **Intelligent Content Scraping:** Just paste a URL, and the app automatically fetches the title, description, and preview image using **Axios** and **Cheerio**.
+* **AI-Powered Summaries & Tags:** Leverages the **Google Gemini Pro API** to generate a concise summary and a list of 3-5 relevant technical tags for every link.
+* **Full CRUD Functionality:** A complete Create, Read, and Delete experience for all your saved crates, with a modal-based UI for adding new items.
+* **Secure Authentication:** Full auth flow supporting both **OAuth (Google, GitHub)** and traditional **Email/Password** sign-in, built with **NextAuth.js**.
+* **Responsive UI with Dark/Light Mode:** A clean, modern, and fully responsive interface built with **Tailwind CSS**, featuring a persistent, user-selectable theme.
+* **API-First Design:** All functionality is handled through a secure backend API built with **Next.js Route Handlers**.
+
+---
+
+## 🛠️ Tech Stack
+
+This project is a full-stack application built with a modern, type-safe stack.
+
+| Category | Technology |
+| :--- | :--- |
+| **Framework** | Next.js 15 (App Router) |
+| **Language** | TypeScript |
+| **Database** | PostgreSQL |
+| **ORM** | Prisma |
+| **Authentication** | NextAuth.js (v4) |
+| **AI** | Google Gemini Pro API (`@google/generative-ai`) |
+| **Web Scraping** | Axios & Cheerio |
+| **Styling** | Tailwind CSS |
+| **Deployment** | Vercel |
+
+---
+
+
+## 📁 Folder Structure
+
+Here's a high-level overview of the project's structure:
+```
+devcrate-app/
+│
+├── app/
+│   ├── api/
+│   │   ├── auth/
+│   │   │   └── [...nextauth]/
+│   │   │       └── route.ts          # NextAuth.js handler
+│   │   ├── crates/
+│   │   │   ├── [id]/
+│   │   │   │   └── route.ts          # DELETE Crate API
+│   │   │   └── route.ts              # GET & POST Crates API
+│   │   ├── register/
+│   │   │   └── route.ts              # User registration API
+│   │   └── scrape/
+│   │       └── route.ts              # Web scraping API
+│   │
+│   ├── dashboard/
+│   │   └── page.tsx                  # Protected user dashboard
+│   │
+│   ├── register/
+│   │   └── page.tsx                  # Custom registration page
+│   │
+│   ├── signin/
+│   │   └── page.tsx                  # Custom sign-in page
+│   │
+│   ├── layout.tsx                    # Root layout (title, theme, providers)
+│   └── page.tsx                      # Public landing page
+│
+├── components/                       # Reusable UI components
+├── lib/                              # Helper singletons (Prisma, Gemini, AuthOptions)
+├── prisma/                           # Prisma schema & migrations
+├── public/                           # Static assets (icons, images, etc.)
+└── README.md
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 How to Run Locally
 
-## Learn More
+### 1. Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+* Node.js (v18 or later)
+* A PostgreSQL database (local or cloud-hosted, e.g., Supabase)
+* A Google AI Studio API Key
+* GitHub & Google OAuth credentials
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Clone Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/om272004/devcrate-app.git
+cd devcrate-app
+```
 
-## Deploy on Vercel
+### 3. Install Dependencies
+This project has a dependency conflict between next@15 and next-auth@4. Use the --legacy-peer-deps flag to install.
+```
+npm install --legacy-peer-deps
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Set Up Environment Variables
+Create a file named ```.env``` in the root of the project and add the following:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+# Database (Get this from Supabase or your local instance)
+DATABASE_URL="postgresql://YOUR_DB_USER:YOUR_DB_PASSWORD@HOST:PORT/DB_NAME"
+
+# Auth 
+NEXTAUTH_SECRET="your_secret_key"
+
+# OAuth Providers
+GITHUB_CLIENT_ID="your_github_client_id"
+GITHUB_CLIENT_SECRET="your_github_client_secret"
+
+GOOGLE_CLIENT_ID="your_google_client_id"
+GOOGLE_CLIENT_SECRET="your_google_client_secret"
+
+# Google Gemini AI
+GEMINI_API_KEY="your_gemini_api_key"
+```
+
+### 5. Push Database Schema
+```
+npx prisma db push
+```
+### 6. Run the Application
+```
+npm run dev
+```
+
+## Open http://localhost:3000 in your browser!
+
+
+## Future Improvements
+This project has a solid foundation, but there's always more to build. Here are a few features I'm planning next:
+
+* Search & Filter: Implement a search bar to filter crates by title, summary, and AI-generated tags.
+* Crate Folders: Add the ability for users to create and manage folders to organize their crates.
+* Edit Functionality: Allow users to edit a crate's details (title, description, tags) after it's been saved.
+* Chrome Extension: Build a simple extension to save links to DevCrate in one click without leaving the page.

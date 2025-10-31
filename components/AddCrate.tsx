@@ -54,7 +54,7 @@ export function AddCrate({ title, description, image, url, onClose, onCrateAdded
     }
 
     return <main className="flex justify-center w-full">
-        <div className="w-2/6 bg-gray-800 p-8 rounded-2xl shadow-2xl shadow-blue-500/20 relative dark:bg-gray-200">
+        <div className="md:w-2/4 lg:w-2/6 bg-gray-800 p-8 rounded-2xl shadow-2xl shadow-blue-500/20 relative dark:bg-gray-200">
             <button type="button"
                 onClick={onClose}
                 className=" absolute top-2 right-8 text-gray-400 hover:text-red-500 text-3xl font-bold p-2 dark:text-gray-800"
